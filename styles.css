@@ -1,0 +1,48 @@
+/* Custom CSS for additional styling and responsiveness */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Hover effects for social icons */
+.fab, .fas {
+    transition: transform 0.3s ease;
+}
+
+.fab:hover, .fas:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav div:first-child {
+        margin-bottom: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth section transitions */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form input focus states */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
