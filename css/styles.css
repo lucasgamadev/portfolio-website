@@ -3,46 +3,109 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Hover effects for social icons */
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Efeitos de hover */
 .fab, .fas {
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .fab:hover, .fas:hover {
     transform: scale(1.2);
+    filter: brightness(1.2);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav div:first-child {
-        margin-bottom: 1rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
+/* Gradientes e sombras */
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/* Smooth section transitions */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+.card-hover {
+    transition: all 0.3s ease;
 }
 
-section.visible {
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu mobile */
+#mobileMenu {
+    transition: opacity 0.3s ease;
+}
+
+#mobileMenu:not(.hidden) {
     opacity: 1;
-    transform: translateY(0);
 }
 
-/* Form input focus states */
+/* Formulário */
+input, textarea {
+    transition: all 0.3s ease;
+}
+
 input:focus, textarea:focus {
     outline: none;
     border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Botões */
+button, .button {
+    transition: all 0.3s ease;
+}
+
+button:hover, .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
