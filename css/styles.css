@@ -109,3 +109,41 @@ html {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+
+/* Profile container styling */
+.profile-container {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: scale(1.05);
+}
+
+/* Logo positioning and styling */
+.profile-container .logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+    border: 2px solid #3b82f6;
+}
+
+.profile-container:hover .logo {
+    transform: rotate(15deg) scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container .logo img {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.profile-container:hover .logo img {
+    transform: rotate(-15deg);
+}
